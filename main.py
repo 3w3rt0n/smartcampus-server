@@ -12,7 +12,7 @@ def hello():
 def json():
     if request.json:
         mydata = request.json         
-        return "Temperatura: " % mydata.get("temperatura")
+        return "Temperatura: " % mydata.get("dispositivo")
     else:
         return "Erro: solicitação não é JSON válido."
 
