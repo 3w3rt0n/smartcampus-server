@@ -42,8 +42,8 @@ def hello():
 def json():
     if request.json:
         mydata = request.json    
-        retunr (HTML_TEMPLATE.substitute(dispositivo=mydata.get("dispositivo"), tempratura=mydata.get("temperatura"), umidade=mydata.get("umidade"), som=mydata.get("som"), luminosidade=mydata.get("luminosidade")))
-        //return "Dispositivo: %s\n::Temperatura: %s *C\n::Umidade: %s %%\n::Som: %s db\n::Luminosidade: %s lux\n" % (mydata.get("dispositivo"),mydata.get("temperatura"),mydata.get("umidade"),mydata.get("som"),mydata.get("luminosidade"))
+        return (HTML_TEMPLATE.substitute(dispositivo=mydata.get("dispositivo"), tempratura=mydata.get("temperatura"), umidade=mydata.get("umidade"), som=mydata.get("som"), luminosidade=mydata.get("luminosidade")))
+        #return "Dispositivo: %s\n::Temperatura: %s *C\n::Umidade: %s %%\n::Som: %s db\n::Luminosidade: %s lux\n" % (mydata.get("dispositivo"),mydata.get("temperatura"),mydata.get("umidade"),mydata.get("som"),mydata.get("luminosidade"))
     else:
         return "Erro: solicitação não é JSON válido."
 
