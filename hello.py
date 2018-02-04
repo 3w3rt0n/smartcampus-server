@@ -3,7 +3,7 @@ import os
 import sys
 import datetime
 import time
-from flask import Flask
+import Flask
 
 
 app = Flask("Hello World")
