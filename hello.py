@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
 import os
 import sys
-import urlparse
-import pytz
 import datetime
 import time
 from flask import Flask, request, redirect, url_for, current_app, render_template
