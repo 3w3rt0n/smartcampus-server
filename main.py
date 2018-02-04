@@ -27,9 +27,20 @@ HTML_TEMPLATE = Template("""
 
 	<div class="container" >		
 		<h1>Temperatura: ${temperatura}ºC</h1>
-        <h1>Umidade: ${umidade}%</h1>
-        <h1>Som: ${som} db</h1>
-        <h1>Luminosidade: ${luminosidade} lux</h1>
+		<h1>Umidade: ${umidade}%</h1>
+		<h1>Som: ${som} db</h1>
+		<h1>Luminosidade: ${luminosidade} lux</h1>
+		
+		<div id="canvas-holder" style="width:40%">
+			<canvas id="chart-area" />
+		</div>
+		<script>
+		   window.onload = function() {
+			var ctx = document.getElementById("chart-area").getContext("2d");
+			data = { datasets: [{ data: [10, 20, 30] }], labels: [ 'Red', 'Yellow',  'Blue' ] };
+			window.myPieChart = new Chart(ctx, { type: 'pie', data: data, options: {responsive: true} } );
+		   }
+	    	</script>
 	</div>
     
     <div class="panel-footer" style="position: absolute; bottom: 0; width: 100%; text-align: right;">Desenvolvidor por Ewerton Leandro de Sousa - 03/01/2017</div>
