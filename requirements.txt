@@ -2,3 +2,5 @@ Flask
 gunicorn
 Template
 psycopg2
+SQLAlchemy
+Heroku
