@@ -76,6 +76,17 @@ def json():
     else:
         return "Erro: solicitação não é JSON válido."
 
+#Lista eventos
+@app.route("/listaEventos")
+def listaEventos():
+    cur.execute("SELECT * FROM data_sensores")
+    rows = cur.fetchall()
+    eventos = "<ul>"
+    for row in rows:
+        eventos = eventos + "<li>id: " + row[1] + "</li><li>Dispositivo: " + row[2] + "</li><li>Temperatura: " + row[3] + "</li><li>Umidade: " + row[4] + "</li><li>Som: " + row[5] + + "</li><li>Luminosidade: " + row[6] + "</li><li>-------</li>"
+    eventos += "</ul>" 
+    return "Eventos cadastrados: " + eventos
+
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
     app.run(host='0.0.0.0', port=port)
