@@ -1,10 +1,10 @@
 import os
-import urlparse
 import psycopg2
 from flask import Flask
 from flask import request
 from flask import json
 from string import Template
+from urllib.parse import urlparse
 
 app = Flask(__name__)
 
