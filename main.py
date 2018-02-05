@@ -18,6 +18,9 @@ conn = psycopg2.connect(
     port=url.port
 )
 
+cur = conn.cursor()
+cur2 = conn.cursor()
+
 app = Flask(__name__)
 
 
