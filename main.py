@@ -4,23 +4,14 @@ from flask import Flask
 from flask import request
 from flask import json
 from string import Template
-from urllib.parse import urlparse
+from flask_sqlalchemy import SQLAlchemy
+from flask_heroku import Heroku
 
 app = Flask(__name__)
 
-urlparse.uses_netloc.append("postgres")
-url = urlparse.urlparse(os.environ["DATABASE_URL"])
-
-conn = psycopg2.connect(
-    database=url.path[1:],
-    user=url.username,
-    password=url.password,
-    host=url.hostname,
-    port=url.port
-)
-
-cur = conn.cursor()
-cur2 = conn.cursor()
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+heroku = Heroku(app)
+db = SQLAlchemy(app)
 
 HTML_TEMPLATE = Template("""
 <!DOCTYPE html>
