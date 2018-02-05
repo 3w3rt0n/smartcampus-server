@@ -86,7 +86,7 @@ def listaEventos():
     rows = cur.fetchall()
     eventos = "<ul>"
     for row in rows:
-        eventos = eventos + "<li>id: " + str(row[0]) + "</li><li>Dispositivo: " + row[1] + "</li><li>Temperatura: " + str(row[2]) + "</li><li>Umidade: " + str(row[4]) + "</li><li>Som: " + str(row[5]) + "</li><li>Luminosidade: " + str(row[6]) + "</li><li>-------</li>"
+        eventos = eventos + "<li>id: " + str(row[0]) + "</li><li>Dispositivo: " + row[1] + "</li><li>Temperatura: " + str(row[2]) + "</li><li>Umidade: " + str(row[3]) + "</li><li>Som: " + str(row[4]) + "</li><li>Luminosidade: " + str(row[5]) + "</li><li>-------</li>"
 	#eventos = eventos + "<li>id: " + str(row[1]) + "</li><li>Dispositivo: " + row[2] + "</li><li>Temperatura: " + str(row[3]) + "</li><li>Umidade: " + str(row[4]) + "</li><li>Som: " + str(row[5]) + "</li><li>Luminosidade: " + str(row[6]) + "</li><li>-------</li>"
     eventos += "</ul>" 
     return "Eventos cadastrados: " + eventos
