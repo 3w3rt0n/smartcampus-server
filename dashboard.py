@@ -34,6 +34,7 @@ def index():
 def handle_source(json_data):
     text = json_data['message'].encode('ascii', 'ignore')
     socketio.emit('echo', {'echo': 'Server Says: '+text})
+    print("MSG: " + text)
 
 if __name__ == "__main__":
     socketio.run(app)
