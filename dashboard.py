@@ -30,11 +30,21 @@ socketio = SocketIO(app)
 def index():
     return render_template('index2.html',)
 
-@socketio.on('send_message')
-def handle_source(json_data):
-    text = json_data['message'].encode('ascii', 'ignore')
-    socketio.emit('echo', {'echo': 'Server Says: '+text})
-    print("MSG: " + text)
+@socketio.on('my event', namespace='/test')
+def test_message(message):
+    emit('my response', {'data': message['data']})
+
+@socketio.on('my broadcast event', namespace='/test')
+def test_message(message):
+    emit('my response', {'data': message['data']}, broadcast=True)
+
+@socketio.on('connect', namespace='/test')
+def test_connect():
+    emit('my response', {'data': 'Connected'})
+
+@socketio.on('disconnect', namespace='/test')
+def test_disconnect():
+    print('Client disconnected')
 
 if __name__ == "__main__":
     socketio.run(app)
