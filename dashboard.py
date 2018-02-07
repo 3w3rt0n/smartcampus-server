@@ -28,7 +28,7 @@ socketio = SocketIO(app)
 
 @app.route("/")
 def index():
-    return render_template('index.html',)
+    return render_template('index2.html',)
 
 @socketio.on('send_message')
 def handle_source(json_data):
