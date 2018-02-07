@@ -1,6 +1,6 @@
 import os
 import psycopg2
-from flask import Flask
+from flask import Flask, render_template
 from flask import request
 from flask import json
 from string import Template
