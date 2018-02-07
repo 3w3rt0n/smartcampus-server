@@ -5,3 +5,4 @@ psycopg2
 SQLAlchemy
 Heroku
 Flask-SocketIO
+gevent
