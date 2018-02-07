@@ -4,3 +4,4 @@ Template
 psycopg2
 SQLAlchemy
 Heroku
+flask-socketio
