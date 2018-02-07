@@ -4,7 +4,7 @@ from flask import Flask, render_template
 from flask import request
 from flask import json
 from string import Template
-from flask_socketio import SocketIO
+from flask_socketio import SocketIO, emit
 
 from urllib import parse
 
